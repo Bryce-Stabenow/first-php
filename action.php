@@ -41,3 +41,31 @@ function paperwork(int $n, int $m): int
 
 echo paperwork(5, 10);
 ?>
+
+<hr>
+
+<?php
+    echo 'Hello, '.'General Kenobi...';
+
+function points(array $games): int
+{
+    $totalScore = 0;
+
+    //Get each item in the array
+    foreach ($games as $scores) {
+        //Compare each game score by creating xScore and yScore variables
+        $x = $scores[0];
+        $y = $scores[2];
+        //Update totalScore based on the result
+        if ($x > $y
+        ) {
+            $totalScore += 3;
+        } elseif ($x == $y) {
+            $totalScore += 1;
+        }
+    }
+
+    return $totalScore;
+}
+points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3']);
+?>
