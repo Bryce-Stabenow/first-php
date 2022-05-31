@@ -67,5 +67,34 @@ function points(array $games): int
 
     return $totalScore;
 }
-points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3']);
+echo points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3']);
+?>
+
+<hr>
+
+<?php
+function move($pos, $roll)
+{
+    return $pos + $roll + $roll;
+}
+echo move(1, 5);
+
+function arrFix($numbers)
+{
+    $highest = max($numbers);
+    $lowest = min($numbers);
+    $fixedArr = [];
+
+    for ($x = $lowest; $x <= $highest; $x++) {
+        array_push($fixedArr, $x);
+    }
+
+    return $fixedArr;
+}
+function arrFixEZ($numbers)
+{
+    return range(min($numbers), max($numbers))
+}
+echo arrFix([1,9]);
+echo arrFixEZ([1, 9]);
 ?>
